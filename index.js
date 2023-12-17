@@ -4,6 +4,10 @@ const app = express();
 //const PORT = 2000;
 const PORT = process.env.PORT || 3030;
 
+app.get("/", (req, res) => {
+  res.send("Hello Everyone");
+});
+
 //API 1
 app.get("/createfile", (req, res) => {
   //file name as date-time.text
@@ -29,10 +33,6 @@ app.get("/createfile", (req, res) => {
     console.log(`File: ${fileName} created successfully`);
   });
   res.send({ fileName: fileName });
-});
-
-app.get("/", (req, res) => {
-  res.send("Hello Everyone");
 });
 
 //API 2
